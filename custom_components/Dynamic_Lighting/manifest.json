@@ -1,0 +1,13 @@
+
+{
+  "domain": "dynamic_light_scheduler",
+  "name": "Dynamic Light Scheduler",
+  "version": "1.0.0",
+  "documentation": "https://github.com/yourusername/dynamic-light-scheduler",
+  "issue_tracker": "https://github.com/yourusername/dynamic-light-scheduler/issues",
+  "dependencies": [],
+  "codeowners": ["@yourusername"],
+  "requirements": [],
+  "config_flow": true,
+  "iot_class": "local_polling"
+}

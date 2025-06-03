@@ -1,0 +1,51 @@
+# =============================================================================
+# services.yaml
+# =============================================================================
+update_schedule:
+  name: Update Schedule
+  description: Update the brightness schedule for a dynamic light scheduler
+  fields:
+    entity_id:
+      name: Entity ID
+      description: The dynamic light scheduler entity to update
+      required: true
+      selector:
+        entity:
+          domain: light
+          integration: dynamic_light_scheduler
+    schedule_points:
+      name: Schedule Points
+      description: List of time/brightness points for the schedule
+      required: true
+      example: '[{"hour": 0, "brightness": 10}, {"hour": 12, "brightness": 90}]'
+
+set_schedule_point:
+  name: Set Schedule Point
+  description: Set or update a single point in the brightness schedule
+  fields:
+    entity_id:
+      name: Entity ID
+      description: The dynamic light scheduler entity to update
+      required: true
+      selector:
+        entity:
+          domain: light
+          integration: dynamic_light_scheduler
+    hour:
+      name: Hour
+      description: Time of day (0-24, can include decimals for minutes)
+      required: true
+      selector:
+        number:
+          min: 0
+          max: 24
+          step: 0.1
+    brightness:
+      name: Brightness
+      description: Brightness percentage (0-100)
+      required: true
+      selector:
+        number:
+          min: 0
+          max: 100
+          step: 1
